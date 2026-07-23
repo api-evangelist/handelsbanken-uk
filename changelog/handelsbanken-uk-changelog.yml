@@ -1,0 +1,36 @@
+generated: '2026-07-23'
+method: searched
+source: https://developer.handelsbanken.com/api/changelog
+scheme: dated (descriptive dates, no semantic versioning)
+current_version: v1
+url: https://developer.handelsbanken.com/api/changelog
+entries:
+- date: '2026-03'
+  highlights:
+  - SEK Credit transfer now available in the Sandbox
+  breaking: false
+- date: '2025-06-30'
+  highlights:
+  - Handelsbanken closed down its operations in Finland
+  breaking: false
+- date: '2025-03'
+  highlights:
+  - BankID in Sweden now offered to initiate a cross-border payment
+  breaking: false
+- date: '2024-10'
+  highlights:
+  - Added account-list endpoint with available amounts for private customers (requires additional SCA)
+  - Short-term consent feature added to AIS
+  breaking: false
+- date: '2024-05'
+  highlights:
+  - Announced closure of Finnish operations with migration dates
+  breaking: false
+- date: '2023-02'
+  highlights:
+  - Launched Great Britain country-specific APIs: Account & Card Information GB, Payment Initiation GB, Confirmation of Funds GB
+  - Added Corporate ID field to account responses
+  additions: true
+  breaking: true
+  deprecations:
+  - GB to be removed from the general Consents API within 3 months (moved to GB-specific APIs)

@@ -45,7 +45,7 @@ tags:
 - United Kingdom
 - Fintech
 created: '2026-07-23'
-modified: '2026-07-23'
+modified: '2026-07-24'
 specificationVersion: '0.19'
 apis:
 - aid: handelsbanken-uk:handelsbanken-uk-account-information-api
@@ -186,6 +186,8 @@ apis:
   - type: GettingStarted
     url: https://developer.handelsbanken.com/api/getting-started
 common:
+- type: DomainSecurity
+  url: security/handelsbanken-uk-domain-security.yml
 - type: Website
   url: https://www.handelsbanken.co.uk/en/
 - type: DeveloperPortal
@@ -210,6 +212,24 @@ common:
   url: https://www.handelsbanken.co.uk/en/about-us
 - type: Compliance
   url: https://register.fca.org.uk/s/firm?id=0010X000049MNcuQAG
+- type: Authentication
+  url: authentication/handelsbanken-uk-authentication.yml
+- type: Conventions
+  url: conventions/handelsbanken-uk-conventions.yml
+- type: Idempotency
+  url: conventions/handelsbanken-uk-conventions.yml
+- type: Conformance
+  url: conformance/handelsbanken-uk-conformance.yml
+- type: Lifecycle
+  url: lifecycle/handelsbanken-uk-lifecycle.yml
+- type: Deprecation
+  url: https://developer.handelsbanken.com/api/changelog
+- type: ChangeLog
+  url: changelog/handelsbanken-uk-changelog.yml
+- type: Sandbox
+  url: sandbox/handelsbanken-uk-sandbox.yml
+- type: LLMsTxt
+  url: llms/handelsbanken-uk-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

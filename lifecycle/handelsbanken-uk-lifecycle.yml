@@ -1,0 +1,24 @@
+generated: '2026-07-23'
+method: searched
+source: https://developer.handelsbanken.com/api/changelog
+versioning:
+  scheme: uri-path
+  current: v1
+  form: /openbanking/psd2/{country}/v1/
+  upcoming: V2 Payments API
+  docs: https://developer.handelsbanken.com/api/psd2/guidelines
+deprecation:
+  policy_url: https://developer.handelsbanken.com/api/changelog
+  observed_notice: >-
+    Deprecations are announced on the changelog with a lead time (e.g. Feb 2023:
+    "we will remove GB from the general Consents API in 3 months"), indicating a
+    ~3-month deprecation window in practice.
+  sunset_header: unknown
+changelog: https://developer.handelsbanken.com/api/changelog
+status_page: null
+sla:
+  url: null
+  note: >-
+    No public status page or SLA page found. FCA Service Metrics API publishes
+    service-quality/availability metrics for GB business current accounts, but
+    that is a data product, not an operational status page.

@@ -1,0 +1,30 @@
+generated: '2026-07-23'
+method: probed
+note: >-
+  Probed the /.well-known/ discovery surface on every host in apis.yml. No
+  discovery documents are published anonymously; the production gateway
+  (api.handelsbanken.com) rejects anonymous TLS (mutual-TLS required), so its
+  well-known surface cannot be probed without a client certificate. Absence is
+  valid recorded data.
+hosts:
+- host: https://developer.handelsbanken.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /llms.txt
+    status: 404
+- host: https://www.handelsbanken.co.uk
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+- host: https://api.handelsbanken.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 0
+    note: connection refused / mutual-TLS gateway, no anonymous response
+  - path: /.well-known/oauth-authorization-server
+    status: 0
+    note: connection refused / mutual-TLS gateway, no anonymous response
+  - path: /openapi.json
+    status: 0
+    note: connection refused / mutual-TLS gateway, no anonymous response

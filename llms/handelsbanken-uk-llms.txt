@@ -1,0 +1,38 @@
+# Handelsbanken UK
+
+> Handelsbanken UK (Handelsbanken plc) is the UK relationship bank of Svenska Handelsbanken AB, operating a decentralised network of 200+ local branches. It is authorised by the PRA and regulated by the FCA and PRA (Financial Services Register 806852). Its Great Britain market Open Banking / PSD2 APIs are published to the Berlin Group NextGenPSD2 standard (not the OBIE Read/Write standard used by the CMA9), on the group developer portal at developer.handelsbanken.com. TPPs enrol against the production gateway with a PSD2 eIDAS (QWAC/QSEALC) or UK Open Banking (OBWAC) certificate, using OAuth2 client authentication, mutual-TLS and PSD2 strong customer authentication, and can test against a sandbox first.
+
+## APIs
+- [PSD2 Account Information API (AIS)](https://developer.handelsbanken.com/api/psd2): retrieve account details, balances and transactions for consenting GB customers.
+- [PSD2 Card Account Information API](https://developer.handelsbanken.com/api/psd2): card account details, balances and transactions.
+- [PSD2 Payment Initiation API (PIS)](https://developer.handelsbanken.com/api/psd2): initiate and manage payments from consenting accounts.
+- [PSD2 Confirmation of Funds API (CBPII)](https://developer.handelsbanken.com/api/psd2): check whether an amount is available on a consenting account.
+- [PSD2 Third-Parties API](https://developer.handelsbanken.com/api/psd2/live): TPP enrolment and certificate attachment for live access.
+- [FCA Service Metrics API](https://developer.handelsbanken.com/api/product/1876/api/1816): service-quality metrics for GB business current account services.
+
+## Docs
+- [Developer portal](https://developer.handelsbanken.com/api/)
+- [PSD2 overview](https://developer.handelsbanken.com/api/psd2)
+- [Technical guidelines](https://developer.handelsbanken.com/api/psd2/guidelines)
+- [Getting started](https://developer.handelsbanken.com/api/getting-started)
+- [Live data enrolment](https://developer.handelsbanken.com/api/psd2/live)
+- [Changelog](https://developer.handelsbanken.com/api/changelog)
+
+## Sandbox
+- [Sandbox general info](https://developer.handelsbanken.com/api/sandbox/geninfo)
+- [Sandbox sign-up](https://developer.handelsbanken.com/api/sandbox/signup)
+- Base URL: https://sandbox.handelsbanken.com/openbanking (static test data; tokens never expire)
+
+## Authentication
+- OAuth2 (client-credentials, authorization-code, decoupled grants) over mutual-TLS.
+- Production requires a PSD2 eIDAS QWAC or UK Open Banking OBWAC certificate from a QTSP.
+- Strong Customer Authentication via Redirect or Decoupled authorization flows.
+
+## Artifacts (API Evangelist)
+- authentication/handelsbanken-uk-authentication.yml
+- conventions/handelsbanken-uk-conventions.yml
+- conformance/handelsbanken-uk-conformance.yml
+- lifecycle/handelsbanken-uk-lifecycle.yml
+- changelog/handelsbanken-uk-changelog.yml
+- sandbox/handelsbanken-uk-sandbox.yml
+- security/handelsbanken-uk-domain-security.yml

@@ -1,0 +1,47 @@
+generated: '2026-07-23'
+method: searched
+source: https://developer.handelsbanken.com/api/psd2
+note: >-
+  Standards asserted from Handelsbanken's published PSD2 documentation and
+  regulatory posture. No anonymous OpenAPI is available to derive spec-level
+  evidence, so evidence is documentary.
+standards:
+- id: berlin-group-nextgenpsd2
+  conforms: true
+  evidence: >-
+    Portal states the Great Britain market APIs are published to the Berlin
+    Group NextGenPSD2 standard (not the OBIE Read/Write standard used by the
+    CMA9).
+- id: psd2
+  conforms: true
+  evidence: Regulated Open Banking APIs delivered to meet UK PSD2 obligations.
+- id: oauth2
+  conforms: true
+  evidence: >-
+    Client-credentials, authorization-code and decoupled OAuth2 grants
+    documented in the technical guidelines.
+- id: mutual-tls
+  conforms: true
+  evidence: TPPs enrol with QWAC/OBWAC certificates over mutual-TLS.
+- id: eidas
+  conforms: true
+  evidence: >-
+    PSD2 eIDAS QWAC/QSEALC certificates from a Qualified Trust Service Provider
+    accepted for production access.
+- id: qsealc-message-signing
+  conforms: true
+  evidence: QSEALC / OBSEAL message-signing certificates required for signed requests.
+- id: fapi
+  conforms: unknown
+  evidence: >-
+    NextGenPSD2 shares FAPI-aligned security patterns but Handelsbanken does not
+    publish an explicit FAPI conformance claim.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Uses Berlin Group tppMessages error structure, not RFC 9457 problem+json.
+compliance:
+  regulated_by:
+  - FCA (Financial Conduct Authority)
+  - PRA (Prudential Regulation Authority)
+  fca_register: https://register.fca.org.uk/s/firm?id=0010X000049MNcuQAG
+  fca_firm_reference: '806852'

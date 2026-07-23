@@ -1,0 +1,49 @@
+generated: '2026-07-23'
+method: searched
+source: https://developer.handelsbanken.com/api/psd2/guidelines
+standard: Berlin Group NextGenPSD2
+note: >-
+  Cross-cutting request/response semantics for Handelsbanken UK's Great Britain
+  market PSD2 APIs, captured from the published technical guidelines and the
+  Berlin Group NextGenPSD2 standard the APIs conform to (no anonymous OpenAPI is
+  published to derive these from).
+authentication:
+  style: OAuth2 (client-credentials, authorization-code, decoupled) over mutual-TLS
+  certificate: PSD2 eIDAS QWAC or UK Open Banking OBWAC from a QTSP
+  see: authentication/handelsbanken-uk-authentication.yml
+idempotency:
+  supported: true
+  mechanism: X-Request-ID
+  description: >-
+    Per the Berlin Group NextGenPSD2 standard that Handelsbanken implements,
+    every call carries a mandatory X-Request-ID header (a UUID unique to the
+    request). For payment initiation this makes retries idempotent: replaying a
+    request with the same X-Request-ID must not create a duplicate payment.
+  header: X-Request-ID
+versioning:
+  scheme: uri-path
+  current: v1
+  form: /openbanking/psd2/{country}/v1/...  (e.g. psd2/gb/v1/)
+  upcoming: V2 Payments API (distinguishes SEK Credit Transfer vs Other Bank Domestic Credit Transfer)
+  changelog: https://developer.handelsbanken.com/api/changelog
+consent:
+  model: PSU consent resource created first; returns Consent-ID (AIS) or Payment-ID (PIS) plus SCA authorisation links
+  regulatory_consent: long-term, all AIS endpoints
+  short_term_consent: 15 minutes (Sweden, individuals)
+country_routing:
+  description: Market is selected by a country segment in the path
+  examples:
+  - psd2/gb/v1/        # Great Britain
+  - psd2/lu/individual/v1/  # Luxembourg
+signing:
+  message_signing: QSEALC / OBSEAL signature over request (PSD2 requirement)
+error_format:
+  standard: Berlin Group NextGenPSD2 tppMessages / error structure (JSON)
+  see: null
+rate_limiting:
+  documented: unknown
+cross_links:
+  authentication: authentication/handelsbanken-uk-authentication.yml
+  lifecycle: lifecycle/handelsbanken-uk-lifecycle.yml
+  sandbox: sandbox/handelsbanken-uk-sandbox.yml
+  conformance: conformance/handelsbanken-uk-conformance.yml

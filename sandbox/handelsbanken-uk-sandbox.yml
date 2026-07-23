@@ -1,0 +1,38 @@
+generated: '2026-07-23'
+method: searched
+source: https://developer.handelsbanken.com/api/sandbox/geninfo
+docs:
+  general: https://developer.handelsbanken.com/api/sandbox/geninfo
+  signup: https://developer.handelsbanken.com/api/sandbox/signup
+  accounts_cards: https://developer.handelsbanken.com/api/sandbox/accountscards
+  payments: https://developer.handelsbanken.com/api/sandbox/payments
+  confirmation_of_funds: https://developer.handelsbanken.com/api/sandbox/cof
+environments:
+  sandbox:
+    base_url: https://sandbox.handelsbanken.com/openbanking
+    country_path_examples:
+    - psd2/gb/v1/
+    - psd2/lu/individual/v1/
+    certificate_required: false
+    notes:
+    - Sandbox holds static test data only.
+    - Sandbox access tokens never expire.
+  live:
+    base_url: https://api.handelsbanken.com/openbanking
+    certificate_required: true   # QWAC or OBWAC from a QTSP
+access:
+  steps:
+  - Register an app on the portal to obtain a Client ID.
+  - Sign up for sandbox access at /api/sandbox/signup.
+  - Subscribe to the APIs to implement, then test before going live.
+  client_id:
+    format: UUID
+    example: f31b7318-8f21-4eaf-8817-6b5e4e02d6bc   # portal-published example value
+test_values:
+  users:
+  - SANDBOX-INDIVIDUAL-SE-1   # portal-published example sandbox user
+  note: >-
+    Handelsbanken publishes a separate test-data document (behind portal login)
+    for concrete test accounts, IBANs and SCA codes; those are not listed
+    anonymously and are not reproduced here. Only values published on the open
+    sandbox pages are captured above.

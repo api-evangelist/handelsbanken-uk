@@ -1,0 +1,64 @@
+generated: '2026-07-23'
+method: searched
+source: https://developer.handelsbanken.com/api/psd2/guidelines
+docs: https://developer.handelsbanken.com/api/psd2/guidelines
+note: >-
+  Handelsbanken publishes no anonymously downloadable OpenAPI (the specs sit
+  behind portal login and the api.handelsbanken.com gateway rejects anonymous
+  TLS), so this profile is derived from the published PSD2 technical guidelines
+  rather than from a securitySchemes block. The APIs implement the Berlin Group
+  NextGenPSD2 authentication model.
+summary:
+  types:
+  - oauth2
+  - mutualTLS
+  transport_security: mutual-TLS (mTLS)
+  oauth2_flows:
+  - clientCredentials
+  - authorizationCode
+  - decoupled
+  strong_customer_authentication: true
+schemes:
+- name: TPP client authentication (mTLS)
+  type: mutualTLS
+  description: >-
+    Third-party providers authenticate the transport channel with a qualified
+    certificate. Production requires a PSD2 eIDAS QWAC (Qualified Website
+    Authentication Certificate) or a UK Open Banking OBWAC certificate issued by
+    a Qualified Trust Service Provider (QTSP); QSEALC/OBSEAL is used for message
+    signing. Sandbox access is available before certificate enrolment.
+  sources:
+  - https://developer.handelsbanken.com/api/psd2/live
+- name: Client Credentials Grant
+  type: oauth2
+  flow: clientCredentials
+  description: >-
+    Initial OAuth2 client-credentials token used for TPP client authentication
+    against the gateway before a PSU consent/authorisation is obtained.
+  sources:
+  - https://developer.handelsbanken.com/api/psd2/guidelines
+- name: Authorization Code Grant (Redirect Authorization)
+  type: oauth2
+  flow: authorizationCode
+  description: >-
+    Resulting from the Redirect Authorization (SCA) flow; the PSU authenticates
+    at Handelsbanken and an authorization code is exchanged for an access token
+    scoped to the consent or payment.
+  sources:
+  - https://developer.handelsbanken.com/api/psd2/guidelines
+- name: Decoupled Grant (Decoupled Authorization)
+  type: oauth2
+  flow: decoupled
+  description: >-
+    Handelsbanken's non-standard decoupled SCA flow (the documented exception to
+    the OAuth2 specification); the PSU approves out-of-band (e.g. banking app /
+    BankID) and the TPP polls for the resulting token. Availability varies by
+    country and by customer type (Individual vs Corporate).
+  sources:
+  - https://developer.handelsbanken.com/api/psd2/guidelines
+consent_model:
+  regulatory_consent: long-term consent applying across all AIS endpoints
+  short_term_consent: 15-minute consent (Sweden, individual users only)
+  identifiers:
+  - Consent-ID (AIS)
+  - Payment-ID (PIS)
