@@ -1,0 +1,215 @@
+aid: handelsbanken-uk
+url: https://raw.githubusercontent.com/api-evangelist/handelsbanken-uk/refs/heads/main/apis.yml
+name: Handelsbanken UK
+kind: company
+description: >-
+  Handelsbanken UK (Handelsbanken plc) is the UK relationship bank of Svenska
+  Handelsbanken AB (publ), the Swedish banking group, and operates a
+  decentralised network of over 200 local branches serving personal and business
+  customers across Britain. Incorporated as a wholly-owned UK subsidiary and
+  authorised by the Prudential Regulation Authority and regulated by the FCA and
+  PRA (Financial Services Register number 806852, authorised since 2018), it is
+  a full-service home-market bank rather than one of the CMA9-mandated
+  institutions. Handelsbanken meets its UK Open Banking / PSD2 obligations
+  through the group developer portal at developer.handelsbanken.com, where its
+  Great Britain market APIs - Account Information (AIS), Card Account
+  Information, Payment Initiation (PIS), and Confirmation of Funds - are
+  published to the Berlin Group NextGenPSD2 standard rather than the OBIE
+  Read/Write standard used by the CMA9. Third-party providers enrol against the
+  production gateway at api.handelsbanken.com using a PSD2 eIDAS (QWAC/QSEALC)
+  or UK Open Banking (OBWAC) certificate, with OAuth2 client authentication,
+  mutual-TLS, and PSD2 strong customer authentication, and can test against a
+  sandbox before going live.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-23'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Banking
+- Open Banking
+- Financial Services
+- PSD2
+- Berlin Group
+- NextGenPSD2
+- Payments
+- Account Information
+- United Kingdom
+- Fintech
+created: '2026-07-23'
+modified: '2026-07-23'
+specificationVersion: '0.19'
+apis:
+- aid: handelsbanken-uk:handelsbanken-uk-account-information-api
+  name: Handelsbanken UK PSD2 Account Information API
+  description: >-
+    The Great Britain market Account Information Service (AIS) API - retrieve
+    account details, balances, and transactions for consenting Handelsbanken UK
+    customers. Published to the Berlin Group NextGenPSD2 standard on the group
+    developer portal; consumed under the accounts-gb product.
+  humanURL: https://developer.handelsbanken.com/api/psd2
+  baseURL: https://api.handelsbanken.com/openbanking/psd2/v1
+  tags:
+  - Account Information
+  - AIS
+  - PSD2
+  - Berlin Group
+  properties:
+  - type: Documentation
+    url: https://developer.handelsbanken.com/api/psd2
+  - type: APIReference
+    url: https://developer.handelsbanken.com/api/psd2/guidelines
+  - type: GettingStarted
+    url: https://developer.handelsbanken.com/api/getting-started
+- aid: handelsbanken-uk:handelsbanken-uk-card-account-information-api
+  name: Handelsbanken UK PSD2 Card Account Information API
+  description: >-
+    The Great Britain market Card Account Information (AIS) API - retrieve card
+    account details, balances, and card transactions for consenting customers,
+    to the Berlin Group NextGenPSD2 standard; consumed under the card
+    accounts-gb product.
+  humanURL: https://developer.handelsbanken.com/api/psd2
+  baseURL: https://api.handelsbanken.com/openbanking/psd2/v1
+  tags:
+  - Card Account Information
+  - AIS
+  - PSD2
+  - Berlin Group
+  properties:
+  - type: Documentation
+    url: https://developer.handelsbanken.com/api/psd2
+  - type: APIReference
+    url: https://developer.handelsbanken.com/api/psd2/guidelines
+  - type: GettingStarted
+    url: https://developer.handelsbanken.com/api/getting-started
+- aid: handelsbanken-uk:handelsbanken-uk-payment-initiation-api
+  name: Handelsbanken UK PSD2 Payment Initiation API
+  description: >-
+    The Great Britain market Payment Initiation Service (PIS) API - initiate and
+    manage payments from consenting Handelsbanken UK customer accounts, to the
+    Berlin Group NextGenPSD2 standard; consumed under the payments-gb product.
+  humanURL: https://developer.handelsbanken.com/api/psd2
+  baseURL: https://api.handelsbanken.com/openbanking/psd2/v1
+  tags:
+  - Payment Initiation
+  - PIS
+  - PSD2
+  - Berlin Group
+  properties:
+  - type: Documentation
+    url: https://developer.handelsbanken.com/api/psd2
+  - type: APIReference
+    url: https://developer.handelsbanken.com/api/psd2/guidelines
+  - type: GettingStarted
+    url: https://developer.handelsbanken.com/api/getting-started
+- aid: handelsbanken-uk:handelsbanken-uk-confirmation-of-funds-api
+  name: Handelsbanken UK PSD2 Confirmation of Funds API
+  description: >-
+    The Great Britain market Confirmation of Funds (CBPII / PIISP) API - check
+    whether a specified amount is available on a consenting customer account, to
+    the Berlin Group NextGenPSD2 standard; consumed under the
+    funds-confirmations-gb product.
+  humanURL: https://developer.handelsbanken.com/api/psd2
+  baseURL: https://api.handelsbanken.com/openbanking/psd2/v1
+  tags:
+  - Confirmation of Funds
+  - CBPII
+  - PSD2
+  - Berlin Group
+  properties:
+  - type: Documentation
+    url: https://developer.handelsbanken.com/api/psd2
+  - type: APIReference
+    url: https://developer.handelsbanken.com/api/psd2/guidelines
+  - type: GettingStarted
+    url: https://developer.handelsbanken.com/api/getting-started
+- aid: handelsbanken-uk:handelsbanken-uk-third-parties-api
+  name: Handelsbanken UK PSD2 Third-Parties API
+  description: >-
+    TPP enrolment API - register as a third-party provider and attach a PSD2
+    eIDAS (QWAC) or UK Open Banking (OBWAC) certificate to access live data on
+    the production gateway. POST/PUT to /openbanking/psd2/v1/third-parties.
+  humanURL: https://developer.handelsbanken.com/api/psd2/live
+  baseURL: https://api.handelsbanken.com/openbanking/psd2/v1
+  tags:
+  - Third Parties
+  - Onboarding
+  - PSD2
+  - eIDAS
+  properties:
+  - type: Documentation
+    url: https://developer.handelsbanken.com/api/psd2/live
+  - type: APIReference
+    url: https://developer.handelsbanken.com/api/psd2/guidelines
+  - type: GettingStarted
+    url: https://developer.handelsbanken.com/api/getting-started
+- aid: handelsbanken-uk:handelsbanken-uk-premium-accounts-api
+  name: Handelsbanken UK Premium Accounts API
+  description: >-
+    First-party premium (beyond-PSD2) Accounts API documented on the
+    Handelsbanken developer portal for commercial account data access outside
+    the regulated Open Banking mandate.
+  humanURL: https://developer.handelsbanken.com/api/
+  baseURL: https://api.handelsbanken.com
+  tags:
+  - Premium
+  - Accounts
+  - Commercial
+  properties:
+  - type: Documentation
+    url: https://developer.handelsbanken.com/api/
+  - type: GettingStarted
+    url: https://developer.handelsbanken.com/api/getting-started
+- aid: handelsbanken-uk:handelsbanken-uk-premium-fx-api
+  name: Handelsbanken UK Premium FX API
+  description: >-
+    First-party premium (beyond-PSD2) Foreign Exchange API documented on the
+    Handelsbanken developer portal for commercial FX rate and transaction
+    services outside the regulated Open Banking mandate.
+  humanURL: https://developer.handelsbanken.com/api/
+  baseURL: https://api.handelsbanken.com
+  tags:
+  - Premium
+  - FX
+  - Foreign Exchange
+  properties:
+  - type: Documentation
+    url: https://developer.handelsbanken.com/api/
+  - type: GettingStarted
+    url: https://developer.handelsbanken.com/api/getting-started
+common:
+- type: Website
+  url: https://www.handelsbanken.co.uk/en/
+- type: DeveloperPortal
+  url: https://developer.handelsbanken.com/api/
+- type: Documentation
+  url: https://developer.handelsbanken.com/api/psd2
+- type: GettingStarted
+  url: https://developer.handelsbanken.com/api/getting-started
+- type: SignUp
+  url: https://developer.handelsbanken.com/api/user/register
+- type: Support
+  url: https://developer.handelsbanken.com/api/support
+- type: OpenBanking
+  url: https://www.handelsbanken.com/en/open-banking
+- type: LinkedIn
+  url: https://www.linkedin.com/company/handelsbanken
+- type: TermsOfService
+  url: https://www.handelsbanken.co.uk/en/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://www.handelsbanken.co.uk/en/privacy-notice
+- type: About
+  url: https://www.handelsbanken.co.uk/en/about-us
+- type: Compliance
+  url: https://register.fca.org.uk/s/firm?id=0010X000049MNcuQAG
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

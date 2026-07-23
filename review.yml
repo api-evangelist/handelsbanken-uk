@@ -1,0 +1,121 @@
+aid: handelsbanken-uk
+name: Handelsbanken UK
+review:
+  question: >-
+    Does Handelsbanken UK publish a genuine, documented public API surface, and
+    does it conform to the OBIE Read/Write standard or to Berlin Group
+    NextGenPSD2 - and is a public Open Data (ATM/branch) endpoint confirmed?
+  answer: true
+  date: '2026-07-23'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    Handelsbanken UK (Handelsbanken plc) exposes its PSD2 / Open Banking API
+    surface through the shared Handelsbanken group developer portal at
+    https://developer.handelsbanken.com/api/ (HTTP 200), which serves a public
+    welcome page, a Getting Started guide, PSD2 product documentation, technical
+    guidelines, developer-account registration, and a support desk. Unlike the
+    CMA9 banks, Handelsbanken is NOT a CMA9 institution and does NOT implement
+    the OBIE UK Open Banking Read/Write API Standard. Its documented API family
+    is built to the Berlin Group NextGenPSD2 standard and offered per market;
+    the Great Britain market products are accounts-gb (Account Information / AIS),
+    a Card Account Information API, payments-gb (Payment Initiation / PIS), and
+    funds-confirmations-gb (Confirmation of Funds / CBPII). Two first-party
+    premium (beyond-PSD2) products are also documented: a Premium Accounts API
+    and a Premium FX API. All products route through the single production
+    gateway https://api.handelsbanken.com/, with PSD2 resources under
+    /openbanking/psd2/v1/ (e.g. the Third-Parties enrolment endpoint
+    /openbanking/psd2/v1/third-parties). Live-data access requires TPP enrolment
+    plus a PSD2 eIDAS certificate (QWAC/QSEALC) or a UK Open Banking certificate
+    (OBWAC), OAuth2 client authentication (client-credentials token at
+    /mlurd/oauth2/token/1.0), mutual-TLS, and PSD2 strong customer
+    authentication; a sandbox with fictitious test data is provided before
+    go-live. No public Open Data (ATM/branch/product) API was confirmed:
+    Handelsbanken UK runs a relationship-banking model with a small branch
+    network and no ATM estate, and it does not appear in the UK Open Data
+    aggregators alongside the CMA9. Data endpoints on the gateway are not
+    reachable unauthenticated (connection refused / auth required), so no live
+    200 JSON from a data endpoint was captured; the developer-portal surfaces
+    and the base gateway are verified real.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.handelsbanken.com/openbanking/psd2/v1
+      documented: true
+      note: Berlin Group NextGenPSD2 PSD2 resources (AIS, Card AIS, PIS, COF, Third-Parties) for the GB market; production gateway.
+  authModel:
+    standard: Berlin Group NextGenPSD2
+    oauth2: true
+    grantTypes:
+      - client_credentials
+    tokenEndpoint: https://api.handelsbanken.com/mlurd/oauth2/token/1.0
+    mutualTLS: true
+    strongCustomerAuthentication: true
+    certificates:
+      - PSD2 eIDAS QWAC/QSEALC
+      - UK Open Banking OBWAC
+    note: >-
+      FAPI/PSD2-grade. TPP enrolment via the Third-Parties API precedes live
+      access; sandbox testing available first.
+  openDataConfirmed: false
+  openDataNote: >-
+    No public, unauthenticated OBIE Open Data (ATM/Branch/PCA/BCA) endpoint was
+    found for Handelsbanken UK. It is not a CMA9 bank, runs a relationship model
+    with a limited branch network and no ATM estate, and does not appear in the
+    UK Open Data aggregators. No Open Data host was invented.
+  endpointsConfirmed:
+    - GET  https://developer.handelsbanken.com/api/ (200)
+    - GET  https://developer.handelsbanken.com/api/getting-started (200)
+    - GET  https://developer.handelsbanken.com/api/psd2 (200)
+    - GET  https://developer.handelsbanken.com/api/psd2/guidelines (200)
+    - GET  https://developer.handelsbanken.com/api/psd2/live (200)
+    - GET  https://developer.handelsbanken.com/api/user/register (200)
+    - GET  https://developer.handelsbanken.com/api/support (200)
+    - GET  https://www.handelsbanken.co.uk/en/ (200)
+    - GET  https://www.handelsbanken.com/en/open-banking (200)
+    - POST https://api.handelsbanken.com/openbanking/psd2/v1/third-parties (not reachable unauthenticated - documented, live TPP enrolment endpoint)
+specProvenance:
+  standard: Berlin Group NextGenPSD2
+  version: unspecified-public
+  source: https://developer.handelsbanken.com/api/psd2/guidelines
+  note: |
+    Handelsbanken conforms to the Berlin Group NextGenPSD2 standard, NOT the
+    OBIE UK Open Banking Read/Write standard used by the CMA9. No bank-proprietary
+    OpenAPI is downloadable without authentication - the full technical
+    specifications sit behind a required developer-portal login. The OBIE
+    Read/Write specs were deliberately NOT harvested here because Handelsbanken
+    does not implement them; harvesting them would misrepresent this bank's
+    conformance. openapi/ is therefore intentionally empty at bootstrap.
+sources:
+  - url: https://developer.handelsbanken.com/api/
+    type: DeveloperPortal
+    note: Handelsbanken group API developer portal welcome page (200).
+  - url: https://developer.handelsbanken.com/api/psd2
+    type: Documentation
+    note: PSD2 product family - AIS, Card AIS, PIS, Confirmation of Funds; per-market incl. Great Britain.
+  - url: https://developer.handelsbanken.com/api/getting-started
+    type: GettingStarted
+    note: Onboarding steps; eIDAS QWAC / UK OBWAC certificate requirement; sandbox then live.
+  - url: https://developer.handelsbanken.com/api/psd2/live
+    type: Documentation
+    note: Live-data enrolment; production gateway api.handelsbanken.com; Third-Parties, token, subscriptions endpoints.
+  - url: https://www.handelsbanken.com/en/open-banking
+    type: OpenBanking
+    note: Group Open Banking overview page (200).
+  - url: https://register.fca.org.uk/s/firm?id=0010X000049MNcuQAG
+    type: Compliance
+    note: FCA Register - Handelsbanken plc, FRN 806852, PRA-authorised UK subsidiary since 2018.
+actions:
+  apisYmlUpdated: true
+  openapiHarvested: []
+  reason: |
+    Handelsbanken UK exposes a real, documented, sandbox-backed PSD2 API surface
+    via the group developer portal, built to Berlin Group NextGenPSD2 (not OBIE
+    Read/Write, not CMA9). Seven real API products were captured (four GB PSD2
+    APIs, a Third-Parties enrolment API, and two first-party premium APIs) with
+    verified developer-portal URLs and the real production gateway base URL. No
+    public OpenAPI could be harvested (specs are behind an authenticated login)
+    and no OBIE spec was substituted, to avoid misrepresenting conformance. No
+    public Open Data endpoint exists for this bank; none was fabricated. Pricing
+    is left to the enrichment pipeline (regulated PSD2 access is free; premium
+    APIs are commercial).
