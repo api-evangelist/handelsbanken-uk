@@ -46,7 +46,7 @@ tags:
 - Fintech
 created: '2026-07-23'
 modified: '2026-07-24'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: handelsbanken-uk:handelsbanken-uk-account-information-api
   name: Handelsbanken UK PSD2 Account Information API
