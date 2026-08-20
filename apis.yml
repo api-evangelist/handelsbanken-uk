@@ -36,6 +36,17 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.j
 tags:
 - Banking
 - Open Banking
+- Financial-Services
+- PSD2
+- Berlin Group
+- NextGenPSD2
+- Payments
+- Account Information
+- United Kingdom
+- Fintech
+tags_raw:
+- Banking
+- Open Banking
 - Financial Services
 - PSD2
 - Berlin Group
@@ -160,6 +171,10 @@ apis:
   humanURL: https://developer.handelsbanken.com/api/
   baseURL: https://api.handelsbanken.com
   tags:
+  - Premium
+  - Account
+  - Commercial
+  tags_raw:
   - Premium
   - Accounts
   - Commercial
