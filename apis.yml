@@ -20,6 +20,17 @@ description: >-
   or UK Open Banking (OBWAC) certificate, with OAuth2 client authentication,
   mutual-TLS, and PSD2 strong customer authentication, and can test against a
   sandbox before going live.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
