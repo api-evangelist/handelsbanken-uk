@@ -122,6 +122,11 @@ apis:
   baseURL: https://api.handelsbanken.com/openbanking/psd2/v1
   tags:
   - Payment Initiation
+  - PI
+  - PSD2
+  - Berlin Group
+  tags_raw:
+  - Payment Initiation
   - PIS
   - PSD2
   - Berlin Group
