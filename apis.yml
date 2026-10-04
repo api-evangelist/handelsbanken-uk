@@ -47,7 +47,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.j
 tags:
 - Banking
 - Open Banking
-- Financial-Services
+- Financial Services
 - PSD2
 - Berlin Group
 - NextGenPSD2
@@ -66,6 +66,7 @@ tags_raw:
 - Account Information
 - United Kingdom
 - Fintech
+- Financial-Services
 created: '2026-07-23'
 modified: '2026-07-24'
 specificationVersion: '0.23'
