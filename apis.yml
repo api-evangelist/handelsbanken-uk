@@ -210,6 +210,9 @@ apis:
   baseURL: https://api.handelsbanken.com
   tags:
   - Premium
+  - Foreign Exchange
+  tags_raw:
+  - Premium
   - FX
   - Foreign Exchange
   properties:
