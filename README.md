@@ -1,4 +1,4 @@
-# Handelsbanken UK (handelsbanken-uk)
+# Handelsbanken UK
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,182 +64,97 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Handelsbanken UK (Handelsbanken plc) is the UK relationship bank of Svenska Handelsbanken AB (publ), the Swedish banking group. It runs a decentralised network of over 200 local branches serving personal and business customers across Britain. It is a wholly-owned UK subsidiary authorised by the Prudential Regulation Authority and regulated by the FCA and PRA (Financial Services Register number 806852), and is a full-service home-market bank rather than one of the CMA9-mandated institutions. Handelsbanken meets its UK Open Banking / PSD2 obligations through the group developer portal, publishing its Great Britain market APIs to the Berlin Group NextGenPSD2 standard rather than the OBIE Read/Write standard used by the CMA9.
+Handelsbanken UK (Handelsbanken plc) is the UK relationship bank of Svenska Handelsbanken AB (publ), the Swedish banking group, and operates a decentralised network of over 200 local branches serving personal and business customers across Britain. Incorporated as a wholly-owned UK subsidiary and authorised by the Prudential Regulation Authority and regulated by the FCA and PRA (Financial Services Register number 806852, authorised since 2018), it is a full-service home-market bank rather than one of the CMA9-mandated institutions. Handelsbanken meets its UK Open Banking / PSD2 obligations through the group developer portal at developer.handelsbanken.com, where its Great Britain market APIs - Account Information (AIS), Card Account Information, Payment Initiation (PIS), and Confirmation of Funds - are published to the Berlin Group NextGenPSD2 standard rather than the OBIE Read/Write standard used by the CMA9. Third-party providers enrol against the production gateway at api.handelsbanken.com using a PSD2 eIDAS (QWAC/QSEALC) or UK Open Banking (OBWAC) certificate, with OAuth2 client authentication, mutual-TLS, and PSD2 strong customer authentication, and can test against a sandbox before going live.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/handelsbanken-uk/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/handelsbanken-uk/refs/heads/main/apis.yml)
+**Areas:** Banking · Open Banking · Financial Services · PSD2 · Berlin Group · NextGenPSD2 · Payments · Account Information · United Kingdom · Fintech
 
-## Tags
+## Handelsbanken UK on APIs.io
 
-- Banking
-- Open Banking
-- Financial Services
-- PSD2
-- Berlin Group
-- NextGenPSD2
-- Payments
-- Account Information
-- United Kingdom
-- Fintech
+Everything profiled for Handelsbanken UK is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/handelsbanken-uk/](https://apis.io/providers/handelsbanken-uk/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (7)
 
-- **Created:** 2026-07-23
-- **Modified:** 2026-07-23
+- [Handelsbanken UK PSD2 Account Information API](https://apis.io/apis/handelsbanken-uk/handelsbanken-uk-account-information-api/) — The Great Britain market Account Information Service (AIS) API - retrieve account details, balances, and transactions for consenting Handelsbanken UK…
+- [Handelsbanken UK PSD2 Card Account Information API](https://apis.io/apis/handelsbanken-uk/handelsbanken-uk-card-account-information-api/) — The Great Britain market Card Account Information (AIS) API - retrieve card account details, balances, and card transactions for consenting customers, to…
+- [Handelsbanken UK PSD2 Payment Initiation API](https://apis.io/apis/handelsbanken-uk/handelsbanken-uk-payment-initiation-api/) — The Great Britain market Payment Initiation Service (PIS) API - initiate and manage payments from consenting Handelsbanken UK customer accounts, to the…
+- [Handelsbanken UK PSD2 Confirmation of Funds API](https://apis.io/apis/handelsbanken-uk/handelsbanken-uk-confirmation-of-funds-api/) — The Great Britain market Confirmation of Funds (CBPII / PIISP) API - check whether a specified amount is available on a consenting customer account, to the…
+- [Handelsbanken UK PSD2 Third-Parties API](https://apis.io/apis/handelsbanken-uk/handelsbanken-uk-third-parties-api/) — TPP enrolment API - register as a third-party provider and attach a PSD2 eIDAS (QWAC) or UK Open Banking (OBWAC) certificate to access live data on the…
+- [Handelsbanken UK Premium Accounts API](https://apis.io/apis/handelsbanken-uk/handelsbanken-uk-premium-accounts-api/) — First-party premium (beyond-PSD2) Accounts API documented on the Handelsbanken developer portal for commercial account data access outside the regulated…
+- [Handelsbanken UK Premium FX API](https://apis.io/apis/handelsbanken-uk/handelsbanken-uk-premium-fx-api/) — First-party premium (beyond-PSD2) Foreign Exchange API documented on the Handelsbanken developer portal for commercial FX rate and transaction services…
 
-## APIs
+### Published properties
 
-### Handelsbanken UK PSD2 Account Information API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The Great Britain market Account Information Service (AIS) API — retrieve account details, balances, and transactions for consenting Handelsbanken UK customers, to the Berlin Group NextGenPSD2 standard (accounts-gb product).
+#### Security (2)
 
-- **Human URL:** [https://developer.handelsbanken.com/api/psd2](https://developer.handelsbanken.com/api/psd2)
-- **Base URL:** `https://api.handelsbanken.com/openbanking/psd2/v1`
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Tags
+- [Handelsbanken Uk Authentication](https://apis.io/security/handelsbanken-uk/handelsbanken-uk-authentication/)
+- [Handelsbanken Uk Domain Security](https://apis.io/security/handelsbanken-uk/handelsbanken-uk-domain-security/)
 
-- Account Information
-- AIS
-- PSD2
-- Berlin Group
+## Where to find this API
 
-#### Properties
-
-- [Documentation](https://developer.handelsbanken.com/api/psd2)
-- [API Reference](https://developer.handelsbanken.com/api/psd2/guidelines)
-- [Getting Started](https://developer.handelsbanken.com/api/getting-started)
-
-### Handelsbanken UK PSD2 Card Account Information API
-
-The Great Britain market Card Account Information (AIS) API — retrieve card account details, balances, and card transactions for consenting customers (card accounts-gb product).
-
-- **Human URL:** [https://developer.handelsbanken.com/api/psd2](https://developer.handelsbanken.com/api/psd2)
-- **Base URL:** `https://api.handelsbanken.com/openbanking/psd2/v1`
-
-#### Tags
-
-- Card Account Information
-- AIS
-- PSD2
-- Berlin Group
-
-#### Properties
-
-- [Documentation](https://developer.handelsbanken.com/api/psd2)
-- [API Reference](https://developer.handelsbanken.com/api/psd2/guidelines)
-- [Getting Started](https://developer.handelsbanken.com/api/getting-started)
-
-### Handelsbanken UK PSD2 Payment Initiation API
-
-The Great Britain market Payment Initiation Service (PIS) API — initiate and manage payments from consenting customer accounts (payments-gb product).
-
-- **Human URL:** [https://developer.handelsbanken.com/api/psd2](https://developer.handelsbanken.com/api/psd2)
-- **Base URL:** `https://api.handelsbanken.com/openbanking/psd2/v1`
-
-#### Tags
-
-- Payment Initiation
-- PIS
-- PSD2
-- Berlin Group
-
-#### Properties
-
-- [Documentation](https://developer.handelsbanken.com/api/psd2)
-- [API Reference](https://developer.handelsbanken.com/api/psd2/guidelines)
-- [Getting Started](https://developer.handelsbanken.com/api/getting-started)
-
-### Handelsbanken UK PSD2 Confirmation of Funds API
-
-The Great Britain market Confirmation of Funds (CBPII / PIISP) API — check whether a specified amount is available on a consenting customer account (funds-confirmations-gb product).
-
-- **Human URL:** [https://developer.handelsbanken.com/api/psd2](https://developer.handelsbanken.com/api/psd2)
-- **Base URL:** `https://api.handelsbanken.com/openbanking/psd2/v1`
-
-#### Tags
-
-- Confirmation of Funds
-- CBPII
-- PSD2
-- Berlin Group
-
-#### Properties
-
-- [Documentation](https://developer.handelsbanken.com/api/psd2)
-- [API Reference](https://developer.handelsbanken.com/api/psd2/guidelines)
-- [Getting Started](https://developer.handelsbanken.com/api/getting-started)
-
-### Handelsbanken UK PSD2 Third-Parties API
-
-TPP enrolment API — register as a third-party provider and attach a PSD2 eIDAS (QWAC) or UK Open Banking (OBWAC) certificate to access live data on the production gateway.
-
-- **Human URL:** [https://developer.handelsbanken.com/api/psd2/live](https://developer.handelsbanken.com/api/psd2/live)
-- **Base URL:** `https://api.handelsbanken.com/openbanking/psd2/v1`
-
-#### Tags
-
-- Third Parties
-- Onboarding
-- PSD2
-- eIDAS
-
-#### Properties
-
-- [Documentation](https://developer.handelsbanken.com/api/psd2/live)
-- [API Reference](https://developer.handelsbanken.com/api/psd2/guidelines)
-- [Getting Started](https://developer.handelsbanken.com/api/getting-started)
-
-### Handelsbanken UK Premium Accounts API
-
-First-party premium (beyond-PSD2) Accounts API documented on the developer portal for commercial account data access outside the regulated Open Banking mandate.
-
-- **Human URL:** [https://developer.handelsbanken.com/api/](https://developer.handelsbanken.com/api/)
-- **Base URL:** `https://api.handelsbanken.com`
-
-#### Tags
-
-- Premium
-- Accounts
-- Commercial
-
-#### Properties
-
-- [Documentation](https://developer.handelsbanken.com/api/)
-- [Getting Started](https://developer.handelsbanken.com/api/getting-started)
-
-### Handelsbanken UK Premium FX API
-
-First-party premium (beyond-PSD2) Foreign Exchange API documented on the developer portal for commercial FX rate and transaction services outside the regulated Open Banking mandate.
-
-- **Human URL:** [https://developer.handelsbanken.com/api/](https://developer.handelsbanken.com/api/)
-- **Base URL:** `https://api.handelsbanken.com`
-
-#### Tags
-
-- Premium
-- FX
-- Foreign Exchange
-
-#### Properties
-
-- [Documentation](https://developer.handelsbanken.com/api/)
-- [Getting Started](https://developer.handelsbanken.com/api/getting-started)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.handelsbanken.co.uk/en/)
-- [Developer Portal](https://developer.handelsbanken.com/api/)
 - [Documentation](https://developer.handelsbanken.com/api/psd2)
-- [Getting Started](https://developer.handelsbanken.com/api/getting-started)
-- [Sign Up](https://developer.handelsbanken.com/api/user/register)
+- [Getting started](https://developer.handelsbanken.com/api/getting-started)
+- [Sign up](https://developer.handelsbanken.com/api/user/register)
 - [Support](https://developer.handelsbanken.com/api/support)
-- [Open Banking (Group)](https://www.handelsbanken.com/en/open-banking)
-- [LinkedIn](https://www.linkedin.com/company/handelsbanken)
-- [Terms of Service](https://www.handelsbanken.co.uk/en/terms-and-conditions)
-- [Privacy Policy](https://www.handelsbanken.co.uk/en/privacy-notice)
-- [About](https://www.handelsbanken.co.uk/en/about-us)
-- [FCA Register](https://register.fca.org.uk/s/firm?id=0010X000049MNcuQAG)
+- [Compliance](https://register.fca.org.uk/s/firm?id=0010X000049MNcuQAG)
+- [Terms of service](https://www.handelsbanken.co.uk/en/terms-and-conditions)
+- [Privacy policy](https://www.handelsbanken.co.uk/en/privacy-notice)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 36.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 23.7 |
+| Developer ergonomics | 61.9 |
+| Access clarity | 42.1 |
+
+**Agent readiness 5.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | documented (partial credit) |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 34.6** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/handelsbanken-uk/](https://apis.io/providers/handelsbanken-uk/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Handelsbanken UK: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/handelsbanken-uk/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
